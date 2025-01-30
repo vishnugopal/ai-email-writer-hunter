@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: 1
+  goal_details: MyString
+  email_content: MyText
+
+two:
+  goal: 1
+  goal_details: MyString
+  email_content: MyText
