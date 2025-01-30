@@ -1,6 +1,13 @@
 # README
 
-To get everything started, bin/setup.
+To insert the OpenAI key, do bin/rails credentials:edit and insert:
+
+```
+openai:
+  access_token: <ACCESS_TOKEN>
+```
+
+Then: `bin/setup`.
 
 ## Goal
 
