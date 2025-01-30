@@ -6,10 +6,10 @@ You’ll build a Rails application named “AI Email Writer” to assist users i
 
 The home page will prompt users to input the following details:
 
-- The purpose of the email
-- Recipient information
-- Sender information
-- Any relevant parameters for the email (e.g., reading time, language, tone, etc.)
+- [x] The purpose of the email
+- [x] Recipient information
+- [x] Sender information
+- [x] Any relevant parameters for the email (e.g., reading time, language, tone, etc.)
 
 In response, the application should generate and return a tailored cold email draft that aligns with the provided criteria, including a subject line and body content.
 
@@ -17,10 +17,10 @@ The application will also maintain a history of previously generated emails, all
 
 ## Guidance
 
-- Authentication, account creation, and session management **are not required**.
-- You can use any storage solution (e.g., in-memory, file-based, or database-backed).
-- We have intentionally left out specific technical or design guidelines. Follow the mantra: “Make it work, make it right, make it fast.”
-- We have provided an OpenAI API key via email, enabling interaction with any OpenAI model through their API. However, you can use alternative platforms or tools if they better suit your approach.
+- [x] Authentication, account creation, and session management **are not required**.
+- [x] You can use any storage solution (e.g., in-memory, file-based, or database-backed).
+- [x] We have intentionally left out specific technical or design guidelines. Follow the mantra: “Make it work, make it right, make it fast.”
+- [x] We have provided an OpenAI API key via email, enabling interaction with any OpenAI model through their API. However, you can use alternative platforms or tools if they better suit your approach.
 
 ## Output
 
