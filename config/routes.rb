@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :senders
 
   resources :cold_emails
+
+  root "cold_emails#new"
 end

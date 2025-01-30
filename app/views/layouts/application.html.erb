@@ -24,6 +24,18 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Cold Emails", cold_emails_path %></li>
+          <li><%= link_to "Recipients", recipients_path %></li>
+          <li><%= link_to "Senders", senders_path %></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
     <%= yield %>
+    <main>
   </body>
 </html>
