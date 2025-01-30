@@ -1,15 +1,8 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  title: MyString
-  organization: MyString
-  organization_website: MyString
-  contact_details: MyText
-
-two:
-  name: MyString
-  title: MyString
-  organization: MyString
-  organization_website: MyString
-  contact_details: MyText
+---
+1:
+  id: 1
+  name: John Smith
+  title: Customer Manager
+  organization: Hunter
+  organization_website: hunter.io
+  contact_details: Contact me on +111XDXX

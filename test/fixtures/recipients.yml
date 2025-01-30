@@ -1,17 +1,17 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  title: MyString
-  organization: MyString
-  organization_website: MyString
-  personalization_hints: MyText
-  type_of_recipient: 1
-
-two:
-  name: MyString
-  title: MyString
-  organization: MyString
-  organization_website: MyString
-  personalization_hints: MyText
-  type_of_recipient: 1
+---
+1:
+  id: 1
+  name: Vishnu Gopal
+  title: CTO
+  organization: Diffect
+  organization_website: vishnugopal.com
+  personalization_hints: Interested in hiring technical writers
+  type_of_recipient: customer
+2:
+  id: 2
+  name: Hari Gopal
+  title: Twelve
+  organization: Hundred
+  organization_website: Something
+  personalization_hints: Hello
+  type_of_recipient: client

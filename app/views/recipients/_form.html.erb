@@ -38,7 +38,7 @@
 
   <div>
     <%= form.label :type_of_recipient, style: "display: block" %>
-    <%= form.text_field :type_of_recipient %>
+    <%= form.select :type_of_recipient, Recipient.type_of_recipients.keys  %>
   </div>
 
   <div>
