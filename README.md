@@ -1,5 +1,7 @@
 # README
 
+To get everything started, bin/setup.
+
 ## Goal
 
 You’ll build a Rails application named “AI Email Writer” to assist users in drafting effective [cold emails](https://www.notion.so/Senior-Product-Engineer-Rails-Technical-assessment-17514ec4c85d80f5af47eb9c497507d5?pvs=21).
