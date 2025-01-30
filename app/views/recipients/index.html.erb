@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Recipients" %>
+
+<h1>Recipients</h1>
+
+<div id="recipients">
+  <% @recipients.each do |recipient| %>
+    <%= render recipient %>
+    <p>
+      <%= link_to "Show this recipient", recipient %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New recipient", new_recipient_path %>
