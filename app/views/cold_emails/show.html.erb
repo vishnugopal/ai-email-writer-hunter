@@ -5,3 +5,5 @@
 <div>
   <%= link_to "Back to cold emails", cold_emails_path %>
 </div>
+
+<%= turbo_stream_from "#{dom_id(@cold_email)}_progress" %>

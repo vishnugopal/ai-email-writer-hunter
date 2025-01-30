@@ -1,6 +1,8 @@
-<% content_for :title, "New Cold Email" %>
+
 
 <h1>New Cold Email</h1>
+
+<% content_for :title, "New Cold Email" %>
 
 <%= render "form", cold_email: @cold_email %>
 
@@ -9,3 +11,4 @@
 <div>
   <%= link_to "Show all cold emails", cold_emails_path %>
 </div>
+

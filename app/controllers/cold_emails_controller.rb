@@ -17,10 +17,10 @@ class ColdEmailsController < ApplicationController
     prompt = render_to_string("cold_emails/prompt", locals: {
       goal: @cold_email.goal, goal_details: @cold_email.goal_details, recipient: @cold_email.recipient, sender: @cold_email.sender
     })
-    @cold_email.email_content = @cold_email.generate(prompt: prompt)
 
     respond_to do |format|
       if @cold_email.save
+        GetAiResponseJob.perform_later @cold_email.id, prompt
         format.html { redirect_to @cold_email, notice: "Cold Email was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
