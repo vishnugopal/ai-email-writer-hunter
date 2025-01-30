@@ -1,0 +1,26 @@
+<div id="<%= dom_id cold_email %>">
+  <p>
+    <strong>Goal:</strong>
+    <%= cold_email.goal.humanize %>
+  </p>
+
+  <p>
+    <strong>Goal details:</strong>
+    <%= cold_email.goal_details %>
+  </p>
+
+  <p>
+    <strong>Sender:</strong>
+    <%= cold_email.recipient.name %>
+  </p>
+
+  <p>
+    <strong>Recipient:</strong>
+    <%= cold_email.sender.name %>
+  </p>
+
+  <p>
+    <strong>Generated content:</strong>
+    <%= simple_format cold_email.email_content %></pre>
+  </pre>
+</div>

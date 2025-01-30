@@ -1,9 +1,40 @@
 class ColdEmailsController < ApplicationController
+  before_action :set_cold_email, only: %i[ show ]
+
   def index
-    goal = :initiate_connection
-    goal_details = "Hello!"
-    recipient = Recipient.first
-    sender = Sender.first
-    logger.info render_to_string("cold_emails/prompt", locals: { goal: goal, goal_details: goal_details, recipient: recipient, sender: sender })
+    @cold_emails = ColdEmail.all
+  end
+
+  def new
+    @cold_email = ColdEmail.new
+  end
+
+  def show
+  end
+
+  def create
+    @cold_email = ColdEmail.new(cold_email_params)
+    prompt = render_to_string("cold_emails/prompt", locals: {
+      goal: @cold_email.goal, goal_details: @cold_email.goal_details, recipient: @cold_email.recipient, sender: @cold_email.sender
+    })
+    @cold_email.email_content = @cold_email.generate(prompt: prompt)
+
+    respond_to do |format|
+      if @cold_email.save
+        format.html { redirect_to @cold_email, notice: "Cold Email was successfully created." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cold_email
+    @cold_email = ColdEmail.find(params.expect(:id))
+  end
+
+  def cold_email_params
+    params.expect(cold_email: [ :goal, :goal_details, :sender_id, :recipient_id ])
   end
 end

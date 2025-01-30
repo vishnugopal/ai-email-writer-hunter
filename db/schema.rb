@@ -15,8 +15,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_30_115116) do
     t.integer "goal", null: false
     t.string "goal_details", null: false
     t.text "email_content", default: "", null: false
+    t.integer "recipient_id"
+    t.integer "sender_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_cold_emails_on_recipient_id"
+    t.index ["sender_id"], name: "index_cold_emails_on_sender_id"
   end
 
   create_table "recipients", force: :cascade do |t|

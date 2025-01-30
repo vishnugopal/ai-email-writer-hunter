@@ -1,6 +1,9 @@
 class ColdEmail < ApplicationRecord
-  validates :goal, :goal_details, presence: true
   enum :goal, initiate_connection: 0, present_an_opportunity: 10, generate_leads: 20, seek_a_specific_outcome: 30
+
+  belongs_to :recipient
+  belongs_to :sender
+  validates :goal, :goal_details, :recipient, :sender, presence: true
 
   def generate(prompt:)
     response = openai_client.chat(
@@ -10,7 +13,11 @@ class ColdEmail < ApplicationRecord
         temperature: 0.8
       }
     )
-    puts response.dig("choices", 0, "message", "content")
+    response.dig("choices", 0, "message", "content")
+  end
+
+  def self.goals_as_options
+    goals.keys.map { |s| { s.humanize => s } }.reduce({}, :merge)
   end
 
   private

@@ -4,8 +4,8 @@ class CreateColdEmails < ActiveRecord::Migration[8.0]
       t.integer :goal, null: false
       t.string :goal_details, null: false
       t.text :email_content, null: false, default: ""
-      t.references :recipient, null: false, foreign_key: true
-      t.references :sender, null: false, foreign_key: true
+      t.belongs_to :recipient
+      t.belongs_to :sender
 
       t.timestamps
     end

@@ -1,0 +1,37 @@
+<%= form_with(model: cold_email) do |form| %>
+  <% if cold_email.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cold_email.errors.count, "error") %> prohibited this recipient from being saved:</h2>
+
+      <ul>
+        <% cold_email.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :goal, style: "display: block" %>
+    <%= form.select :goal, ColdEmail.goals_as_options %>
+  </div>
+
+  <div>
+    <%= form.label :goal_details, style: "display: block" %>
+    <%= form.textarea :goal_details %>
+  </div>
+
+  <div>
+    <%= form.label :sender, style: "display: block" %>
+    <%= form.select :sender_id, Sender.all_as_options %>
+  </div>
+
+  <div>
+    <%= form.label :recipient, style: "display: block" %>
+    <%= form.select :recipient_id, Recipient.all_as_options %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
